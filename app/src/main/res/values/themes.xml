@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.NewOnBoardingIcarros" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_blue_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Button.OnBoarding" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/smallest_text_size</item>
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="android:paddingBottom">@dimen/button_padding</item>
+        <item name="android:paddingTop">@dimen/button_padding</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="Button.SkipOnBoarding" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/color_blue_primary</item>
+        <item name="android:textSize">@dimen/smallest_text_size</item>
+        <item name="android:background">@drawable/button_shape_white</item>
+        <item name="android:paddingBottom">@dimen/button_padding</item>
+        <item name="android:paddingTop">@dimen/button_padding</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+    </style>
+</resources>
