@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">NewOnBoardingIcarros</string>
+
+    <!--Titles-->
+    <string name="first_slide_title">Busque seu novo Carro</string>
+    <string name="second_slide_title">Filtros personalizados</string>
+    <string name="third_slide_title">Varias funcionalidades</string>
+    <string name="fourth_slide_title">Utilize sua localização</string>
+
+    <!--Descriptions-->
+    <string name="first_slide_desc">Procure digitando pelo modelo ou faça uma pesquisa por voz. </string>
+    <string name="second_slide_desc">Encontre exatamente o que precisa refinando sua pesquisa por variso tipos de filtros (preço, ano, km)</string>
+    <string name="third_slide_desc">Diversas funcionalidades, Tabela FIPE, Okm, Revista icarros entre outros. </string>
+    <string name="fourth_slide_desc">Busque pela sua cidade, seu estado, seu CEP ou se prefirir utilize a busca por GPS. </string>
+
+    <!--Buttons-->
+    <string name="skip_btn">Pular</string>
+    <string name="next_btn">Proximo</string>
+    <string name="let_get_started">Vamos começar!</string>
 </resources>
