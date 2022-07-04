@@ -101,21 +101,27 @@ public class OnboardingActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             addDots(position);
             currentPos = position;
+            animationReverse = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.bottom_anim_reverse);
+            animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.bottom_anim);
 
             if (position == 0) {
                 letsGetStarted.setVisibility(View.INVISIBLE);
+                nextButton.setVisibility(View.VISIBLE);
             } else if (position == 1) {
                 letsGetStarted.setVisibility(View.INVISIBLE);
+                nextButton.setVisibility(View.VISIBLE);
             } else if (position == 2) {
-                if(letsGetStarted.getVisibility() == View.VISIBLE){
-                    animationReverse = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.bottom_anim_reverse);
+                if (letsGetStarted.getVisibility() == View.VISIBLE) {
                     letsGetStarted.setAnimation(animationReverse);
+                    nextButton.setAnimation(animation);
                 }
                 letsGetStarted.setVisibility(View.INVISIBLE);
+                nextButton.setVisibility(View.VISIBLE);
             } else {
-                animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.bottom_anim);
                 letsGetStarted.setAnimation(animation);
                 letsGetStarted.setVisibility(View.VISIBLE);
+                nextButton.setAnimation(animationReverse);
+                nextButton.setVisibility(View.INVISIBLE);
             }
 
         }

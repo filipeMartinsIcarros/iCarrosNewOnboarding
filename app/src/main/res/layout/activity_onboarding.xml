@@ -9,6 +9,7 @@
 
     <Button
         android:id="@+id/skip_btn"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/skip_btn"
@@ -16,7 +17,6 @@
         android:textColor="@color/color_blue_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#00000000"
         android:drawableEnd="@drawable/ic_baseline_done_all_24"/>
 
     <androidx.viewpager.widget.ViewPager
@@ -59,13 +59,12 @@
 
         <Button
             android:id="@+id/next_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:background="#00000000"
             android:drawableEnd="@drawable/ic_next_24"
-            android:drawableRight="@drawable/ic_next_24"
             android:elevation="1dp"
             android:text="@string/next_btn"
             android:textColor="@color/color_blue_primary" />
