@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,7 +26,10 @@ public class OnboardingActivity extends AppCompatActivity {
     Button skipButton;
     Button nextButton;
 
-    Button letsGetStarted;
+    ImageView imageOnBoarding1;
+    ImageView imageOnBoarding2;
+    ImageView imageOnBoarding3;
+    ImageView imageOnBoarding4;
     Animation animation;
     Animation animationReverse;
     int currentPos;
@@ -43,7 +47,10 @@ public class OnboardingActivity extends AppCompatActivity {
         //Hooks
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
-        letsGetStarted = findViewById(R.id.get_started_btn);
+        imageOnBoarding1 = findViewById(R.id.imageOnBoarding1);
+        imageOnBoarding2 = findViewById(R.id.imageOnBoarding2);
+        imageOnBoarding3 = findViewById(R.id.imageOnBoarding3);
+        imageOnBoarding4 = findViewById(R.id.imageOnBoarding4);
 
         //Call adapter
         onBoardingAdapter = new OnBoardingAdapter(this);
@@ -52,6 +59,10 @@ public class OnboardingActivity extends AppCompatActivity {
         //Dots
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
+
+        //Erro ao matar activity
+        animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_start);
+        showImageViewAnimation(imageOnBoarding1);
 
         setupViews();
     }
@@ -101,27 +112,25 @@ public class OnboardingActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             addDots(position);
             currentPos = position;
-            animationReverse = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.bottom_anim_reverse);
-            animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.bottom_anim);
+            animationReverse = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_out);
+            animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_start);
 
             if (position == 0) {
-                letsGetStarted.setVisibility(View.INVISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
+                hideImageViewAnimation(imageOnBoarding2);
+                showImageViewAnimation(imageOnBoarding1);
             } else if (position == 1) {
-                letsGetStarted.setVisibility(View.INVISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
+                hideImageViewAnimation(imageOnBoarding1);
+                hideImageViewAnimation(imageOnBoarding3);
+                showImageViewAnimation(imageOnBoarding2);
             } else if (position == 2) {
-                if (letsGetStarted.getVisibility() == View.VISIBLE) {
-                    letsGetStarted.setAnimation(animationReverse);
-                    nextButton.setAnimation(animation);
-                }
-                letsGetStarted.setVisibility(View.INVISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
+                imageOnBoarding1.setVisibility(View.INVISIBLE);
+                hideImageViewAnimation(imageOnBoarding2);
+                hideImageViewAnimation(imageOnBoarding4);
+                showImageViewAnimation(imageOnBoarding3);
             } else {
-                letsGetStarted.setAnimation(animation);
-                letsGetStarted.setVisibility(View.VISIBLE);
-                nextButton.setAnimation(animationReverse);
-                nextButton.setVisibility(View.INVISIBLE);
+                imageOnBoarding1.setVisibility(View.INVISIBLE);
+                hideImageViewAnimation(imageOnBoarding3);
+                showImageViewAnimation(imageOnBoarding4);
             }
 
         }
@@ -131,5 +140,17 @@ public class OnboardingActivity extends AppCompatActivity {
 
         }
     };
+
+    private void hideImageViewAnimation(ImageView imageView) {
+        if (imageView.getVisibility() == View.VISIBLE) {
+            imageView.setAnimation(animationReverse);
+            imageView.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void showImageViewAnimation(ImageView imageView) {
+        imageView.setAnimation(animation);
+        imageView.setVisibility(View.VISIBLE);
+    }
 
 }

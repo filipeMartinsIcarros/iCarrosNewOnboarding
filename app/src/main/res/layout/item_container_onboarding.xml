@@ -4,28 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="400dp"
     android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/imageOnBoarding"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/large_text_size"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/imageOnBoarding" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textDescription"
@@ -33,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textColor="@color/grey"
+        android:textColor="@color/white"
         android:textSize="@dimen/large_text_size"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/textTitle" />

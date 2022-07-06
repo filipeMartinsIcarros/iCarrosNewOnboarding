@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -58,11 +57,9 @@ public class OnBoardingAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.item_container_onboarding, container, false);
 
-        ImageView imageView = view.findViewById(R.id.imageOnBoarding);
         TextView headingsView = view.findViewById(R.id.textTitle);
         TextView descriptionsView = view.findViewById(R.id.textDescription);
 
-        imageView.setImageResource(images[position]);
         headingsView.setText(headings[position]);
         descriptionsView.setText(descriptions[position]);
 
