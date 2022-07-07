@@ -52,7 +52,7 @@
     <ImageView
         android:id="@+id/imageOnBoarding1"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:src="@drawable/onboarding_1"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
@@ -64,7 +64,7 @@
     <ImageView
         android:id="@+id/imageOnBoarding2"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:src="@drawable/onboarding_2"
@@ -76,7 +76,7 @@
     <ImageView
         android:id="@+id/imageOnBoarding3"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:src="@drawable/onboarding_3"
@@ -84,6 +84,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageOnBoarding1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/gradient_fade"
+        app:layout_constraintBottom_toBottomOf="@+id/imageOnBoarding1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -117,7 +125,7 @@
             android:layout_alignParentBottom="true"
             android:elevation="1dp"
             android:text="@string/skip_btn"
-            android:textColor="@color/color_blue_primary"
+            android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

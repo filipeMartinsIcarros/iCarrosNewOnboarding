@@ -74,6 +74,7 @@ public class OnboardingActivity extends AppCompatActivity {
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Enviar para pagina começar
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 finish();
             }
@@ -81,20 +82,27 @@ public class OnboardingActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewPager.setCurrentItem(currentPos + 1);
+                if(currentPos + 1 == 4){
+                    //Enviar para pagina começar
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    finish();
+                } else {
+                    viewPager.setCurrentItem(currentPos + 1);
+                }
             }
         });
     }
 
     private void addDots(int position) {
 
-        dots = new TextView[4];
+        dots = new TextView[5];
         dotsLayout.removeAllViews();
 
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
-            dots[i].setTextSize(35);
+            dots[i].setTextSize(30);
+            dots[i].setPadding(6,0,6,0);
 
             dotsLayout.addView(dots[i]);
         }
@@ -133,11 +141,15 @@ public class OnboardingActivity extends AppCompatActivity {
                 hideImageViewAnimation(imageOnBoarding1);
                 hideImageViewAnimation(imageOnBoarding3);
                 showImageViewAnimation(imageOnBoarding2);
-            } else {
+            } else if (position == 3) {
                 textOnBoarding1.setVisibility(View.INVISIBLE);
                 textOnBoarding2.setVisibility(View.INVISIBLE);
                 hideImageViewAnimation(imageOnBoarding2);
                 showImageViewAnimation(imageOnBoarding3);
+            } else {
+                //Enviar para pagina começar
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                finish();
             }
         }
 

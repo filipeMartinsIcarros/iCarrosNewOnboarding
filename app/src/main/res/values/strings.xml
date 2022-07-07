@@ -17,6 +17,6 @@
 
     <!--Buttons-->
     <string name="skip_btn">Pular</string>
-    <string name="next_btn">Proximo</string>
+    <string name="next_btn">Próximo</string>
     <string name="let_get_started">Vamos começar!</string>
 </resources>
