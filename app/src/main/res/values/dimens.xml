@@ -11,7 +11,7 @@
     <dimen name="twenty_one_text_size">21sp</dimen>
     <dimen name="big_text_size">24sp</dimen>
     <dimen name="fipe_title_text_size">27sp</dimen>
-    <dimen name="xlarge_text_size">35sp</dimen>
+    <dimen name="xlarge_text_size">40sp</dimen>
     <dimen name="xxlarge_text_size">50sp</dimen>
 
     <!-- Paddings -->

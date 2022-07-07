@@ -26,10 +26,11 @@ public class OnboardingActivity extends AppCompatActivity {
     Button skipButton;
     Button nextButton;
 
+    TextView textOnBoarding1;
+    TextView textOnBoarding2;
     ImageView imageOnBoarding1;
     ImageView imageOnBoarding2;
     ImageView imageOnBoarding3;
-    ImageView imageOnBoarding4;
     Animation animation;
     Animation animationReverse;
     int currentPos;
@@ -47,10 +48,11 @@ public class OnboardingActivity extends AppCompatActivity {
         //Hooks
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
+        textOnBoarding1 = findViewById(R.id.textTitle);
+        textOnBoarding2 = findViewById(R.id.textDescription);
         imageOnBoarding1 = findViewById(R.id.imageOnBoarding1);
         imageOnBoarding2 = findViewById(R.id.imageOnBoarding2);
         imageOnBoarding3 = findViewById(R.id.imageOnBoarding3);
-        imageOnBoarding4 = findViewById(R.id.imageOnBoarding4);
 
         //Call adapter
         onBoardingAdapter = new OnBoardingAdapter(this);
@@ -62,7 +64,8 @@ public class OnboardingActivity extends AppCompatActivity {
 
         //Erro ao matar activity
         animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_start);
-        showImageViewAnimation(imageOnBoarding1);
+        showTextViewAnimation(textOnBoarding1);
+        showTextViewAnimation(textOnBoarding2);
 
         setupViews();
     }
@@ -116,23 +119,26 @@ public class OnboardingActivity extends AppCompatActivity {
             animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_start);
 
             if (position == 0) {
-                hideImageViewAnimation(imageOnBoarding2);
-                showImageViewAnimation(imageOnBoarding1);
+                hideImageViewAnimation(imageOnBoarding1);
+                showTextViewAnimation(textOnBoarding1);
+                showTextViewAnimation(textOnBoarding2);
             } else if (position == 1) {
+                hideImageViewAnimation(imageOnBoarding2);
+                hideTextViewAnimation(textOnBoarding1);
+                hideTextViewAnimation(textOnBoarding2);
+                showImageViewAnimation(imageOnBoarding1);
+            } else if (position == 2) {
+                textOnBoarding1.setVisibility(View.INVISIBLE);
+                textOnBoarding2.setVisibility(View.INVISIBLE);
                 hideImageViewAnimation(imageOnBoarding1);
                 hideImageViewAnimation(imageOnBoarding3);
                 showImageViewAnimation(imageOnBoarding2);
-            } else if (position == 2) {
-                imageOnBoarding1.setVisibility(View.INVISIBLE);
-                hideImageViewAnimation(imageOnBoarding2);
-                hideImageViewAnimation(imageOnBoarding4);
-                showImageViewAnimation(imageOnBoarding3);
             } else {
-                imageOnBoarding1.setVisibility(View.INVISIBLE);
-                hideImageViewAnimation(imageOnBoarding3);
-                showImageViewAnimation(imageOnBoarding4);
+                textOnBoarding1.setVisibility(View.INVISIBLE);
+                textOnBoarding2.setVisibility(View.INVISIBLE);
+                hideImageViewAnimation(imageOnBoarding2);
+                showImageViewAnimation(imageOnBoarding3);
             }
-
         }
 
         @Override
@@ -151,6 +157,18 @@ public class OnboardingActivity extends AppCompatActivity {
     private void showImageViewAnimation(ImageView imageView) {
         imageView.setAnimation(animation);
         imageView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideTextViewAnimation(TextView textView) {
+        if (textView.getVisibility() == View.VISIBLE) {
+            textView.setAnimation(animationReverse);
+            textView.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void showTextViewAnimation(TextView textView) {
+        textView.setAnimation(animation);
+        textView.setVisibility(View.VISIBLE);
     }
 
 }

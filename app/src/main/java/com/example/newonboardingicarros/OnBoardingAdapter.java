@@ -20,21 +20,20 @@ public class OnBoardingAdapter extends PagerAdapter {
     }
 
     int images[] = {
-            R.drawable.on_boarding_1,
-            R.drawable.on_boarding_2,
-            R.drawable.on_boarding_3,
-            R.drawable.on_boarding_3
+            R.drawable.onboarding_1,
+            R.drawable.onboarding_2,
+            R.drawable.onboarding_3
     };
 
     int headings[] = {
-            R.string.first_slide_title,
+            R.string.empty_slide_title,
             R.string.second_slide_title,
             R.string.third_slide_title,
             R.string.fourth_slide_title
     };
 
     int descriptions[] = {
-            R.string.first_slide_desc,
+            R.string.empty_slide_desc,
             R.string.second_slide_desc,
             R.string.third_slide_desc,
             R.string.fourth_slide_desc

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="400dp"
+    android:paddingBottom="416dp"
     android:orientation="vertical">
 
     <TextView
@@ -12,21 +12,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:gravity="center"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="start"
         android:textColor="@color/white"
-        android:textSize="@dimen/large_text_size"
+        android:textSize="@dimen/big_text_size"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="32dp" />
 
     <TextView
         android:id="@+id/textDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
         android:textColor="@color/white"
         android:textSize="@dimen/large_text_size"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

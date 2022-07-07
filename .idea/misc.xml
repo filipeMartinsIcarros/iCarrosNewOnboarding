@@ -15,7 +15,7 @@
         <entry key="app/src/main/res/drawable/on_boarding_indicator_inative.xml" value="0.349" />
         <entry key="app/src/main/res/font/dimens.xml" value="0.40520833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.29846014492753625" />
         <entry key="app/src/main/res/layout/home_activity.xml" value="0.29846014492753625" />
         <entry key="app/src/main/res/layout/item_container_onboarding.xml" value="0.29846014492753625" />

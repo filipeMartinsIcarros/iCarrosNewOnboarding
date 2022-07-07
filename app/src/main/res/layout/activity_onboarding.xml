@@ -18,11 +18,44 @@
 
     </androidx.viewpager.widget.ViewPager>
 
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:gravity="start"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/first_slide_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/xlarge_text_size"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/slider" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="start"
+        android:textColor="@color/white"
+        android:text="@string/first_slide_desc"
+        android:visibility="invisible"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
     <ImageView
         android:id="@+id/imageOnBoarding1"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        android:src="@drawable/on_boarding_1"
+        android:src="@drawable/onboarding_1"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +65,9 @@
         android:id="@+id/imageOnBoarding2"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        android:src="@drawable/on_boarding_2"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:src="@drawable/onboarding_2"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/imageOnBoarding1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,17 +77,9 @@
         android:id="@+id/imageOnBoarding3"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        android:src="@drawable/on_boarding_3"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageOnBoarding1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageOnBoarding4"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:src="@drawable/on_boarding_3"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:src="@drawable/onboarding_3"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/imageOnBoarding1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,8 +89,9 @@
         android:id="@+id/relativeLayout"
         android:background="@color/white"
         android:layout_width="match_parent"
-        android:padding="16dp"
-        android:layout_height="80dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
