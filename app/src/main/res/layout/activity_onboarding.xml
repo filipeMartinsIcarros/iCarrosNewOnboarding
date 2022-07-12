@@ -6,12 +6,27 @@
     android:layout_height="match_parent"
     android:background="@color/color_blue_primary">
 
+    <Button
+        android:id="@+id/skip_btn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="1dp"
+        android:text="@string/skip_btn"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +37,7 @@
         android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="128dp"
         android:gravity="start"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
@@ -46,7 +61,6 @@
         android:text="@string/first_slide_desc"
         android:visibility="invisible"
         android:textSize="@dimen/large_text_size"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
     <ImageView
@@ -111,20 +125,21 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@+id/next_btn"
-            android:layout_toEndOf="@+id/skip_btn"
+            android:layout_toEndOf="@+id/previous_btn"
             android:gravity="center"
             android:orientation="horizontal" />
 
         <Button
-            android:id="@+id/skip_btn"
+            android:id="@+id/previous_btn"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="invisible"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:elevation="1dp"
-            android:text="@string/skip_btn"
+            android:text="@string/previous_btn"
             android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

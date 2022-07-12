@@ -25,6 +25,7 @@ public class OnboardingActivity extends AppCompatActivity {
 
     Button skipButton;
     Button nextButton;
+    Button previousButton;
 
     TextView textOnBoarding1;
     TextView textOnBoarding2;
@@ -44,6 +45,7 @@ public class OnboardingActivity extends AppCompatActivity {
         //btn
         skipButton = findViewById(R.id.skip_btn);
         nextButton = findViewById(R.id.next_btn);
+        previousButton = findViewById(R.id.previous_btn);
 
         //Hooks
         viewPager = findViewById(R.id.slider);
@@ -91,6 +93,15 @@ public class OnboardingActivity extends AppCompatActivity {
                 }
             }
         });
+
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(currentPos != 0){
+                    viewPager.setCurrentItem(currentPos - 1);
+                }
+            }
+        });
     }
 
     private void addDots(int position) {
@@ -127,21 +138,25 @@ public class OnboardingActivity extends AppCompatActivity {
             animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_start);
 
             if (position == 0) {
+                previousButton.setVisibility(View.INVISIBLE);
                 hideImageViewAnimation(imageOnBoarding1);
                 showTextViewAnimation(textOnBoarding1);
                 showTextViewAnimation(textOnBoarding2);
             } else if (position == 1) {
+                previousButton.setVisibility(View.VISIBLE);
                 hideImageViewAnimation(imageOnBoarding2);
                 hideTextViewAnimation(textOnBoarding1);
                 hideTextViewAnimation(textOnBoarding2);
                 showImageViewAnimation(imageOnBoarding1);
             } else if (position == 2) {
+                previousButton.setVisibility(View.VISIBLE);
                 textOnBoarding1.setVisibility(View.INVISIBLE);
                 textOnBoarding2.setVisibility(View.INVISIBLE);
                 hideImageViewAnimation(imageOnBoarding1);
                 hideImageViewAnimation(imageOnBoarding3);
                 showImageViewAnimation(imageOnBoarding2);
             } else if (position == 3) {
+                previousButton.setVisibility(View.VISIBLE);
                 textOnBoarding1.setVisibility(View.INVISIBLE);
                 textOnBoarding2.setVisibility(View.INVISIBLE);
                 hideImageViewAnimation(imageOnBoarding2);
