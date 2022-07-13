@@ -1,6 +1,8 @@
 package com.example.newonboardingicarros;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 public class OnBoardingAdapter extends PagerAdapter {
@@ -51,6 +54,19 @@ public class OnBoardingAdapter extends PagerAdapter {
 
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.item_container_onboarding, container, false);
+
+        View itemBackground = view.findViewById(R.id.itemBackground);
+
+        if (position == 2) {
+            itemBackground.setBackgroundColor(ContextCompat.getColor(context, R.color.color_blue_primary02));
+           // viewGradient.setBackground(ContextCompat.getDrawable(context, R.drawable.gradient_fade_02));
+        } else if (position == 3) {
+            itemBackground.setBackgroundColor(ContextCompat.getColor(context, R.color.color_blue_primary03));
+            //viewGradient.setBackground(ContextCompat.getDrawable(context, R.drawable.gradient_fade_03));
+        } else {
+            itemBackground.setBackgroundColor(ContextCompat.getColor(context, R.color.color_blue_primary));
+           // viewGradient.setBackground(ContextCompat.getDrawable(context, R.drawable.gradient_fade));
+        }
 
         TextView headingsView = view.findViewById(R.id.textTitle);
         TextView descriptionsView = view.findViewById(R.id.textDescription);

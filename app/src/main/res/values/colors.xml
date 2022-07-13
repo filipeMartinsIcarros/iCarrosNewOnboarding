@@ -9,6 +9,10 @@
     <color name="grey">#808080</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color_blue_primary">#2162CC</color>
+    <color name="color_blue_primary02">#00386B</color>
+    <color name="color_blue_primary03">#00213F</color>
     <color name="color_blue_primary_80">#CC2162CC</color>
+    <color name="color_blue_primary02_80">#CC00386B</color>
+    <color name="color_blue_primary03_80">#CC00213F</color>
     <color name="color_blue_primary_dark">#1C5FCF</color>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 public class OnboardingActivity extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class OnboardingActivity extends AppCompatActivity {
     Button nextButton;
     Button previousButton;
 
+    View viewGradient;
     TextView textOnBoarding1;
     TextView textOnBoarding2;
     ImageView imageOnBoarding1;
@@ -55,6 +57,7 @@ public class OnboardingActivity extends AppCompatActivity {
         imageOnBoarding1 = findViewById(R.id.imageOnBoarding1);
         imageOnBoarding2 = findViewById(R.id.imageOnBoarding2);
         imageOnBoarding3 = findViewById(R.id.imageOnBoarding3);
+        viewGradient = findViewById(R.id.viewGradient);
 
         //Call adapter
         onBoardingAdapter = new OnBoardingAdapter(this);
@@ -137,6 +140,8 @@ public class OnboardingActivity extends AppCompatActivity {
             animationReverse = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_out);
             animation = AnimationUtils.loadAnimation(OnboardingActivity.this, R.anim.image_anim_start);
 
+            setColorViewGradient(position);
+
             if (position == 0) {
                 previousButton.setVisibility(View.INVISIBLE);
                 hideImageViewAnimation(imageOnBoarding1);
@@ -196,6 +201,16 @@ public class OnboardingActivity extends AppCompatActivity {
     private void showTextViewAnimation(TextView textView) {
         textView.setAnimation(animation);
         textView.setVisibility(View.VISIBLE);
+    }
+
+    private void setColorViewGradient(int position) {
+        if (position == 2) {
+            viewGradient.setBackground(ContextCompat.getDrawable(this, R.drawable.gradient_fade_02));
+        } else if (position == 3) {
+            viewGradient.setBackground(ContextCompat.getDrawable(this, R.drawable.gradient_fade_03));
+        } else {
+            viewGradient.setBackground(ContextCompat.getDrawable(this, R.drawable.gradient_fade));
+        }
     }
 
 }
